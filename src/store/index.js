@@ -47,21 +47,6 @@ export default new Vuex.Store({
           alert("入力内容に誤りがあります。");
         });
     },
-    userLoginGoogle({ commit }) {
-      const provider = new firebase.auth.GoogleAuthProvider();
-      firebase
-        .auth()
-        .signInWithPopup(provider)
-        .then(user => {
-          commit("setUser", user);
-          commit("setIsAuthenticated", true);
-          router.push("/message");
-        })
-        .catch(() => {
-          commit("setUser", null);
-          commit("setIsAuthenticated", false);
-        });
-    },
     userJoin({ commit }, { email, password, userName }) {
       firebase
         .auth()
