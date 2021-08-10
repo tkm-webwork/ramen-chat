@@ -37,9 +37,6 @@
               class="white--text"
               >ログイン</v-btn
             >
-            <v-btn @click="submitGoogle">
-              Googleアカウントでログイン
-            </v-btn>
           </v-card-actions>
         </v-card>
       </v-flex>
@@ -74,9 +71,6 @@ export default {
         });
       }
     },
-    submitGoogle() {
-      this.$store.dispatch("userLoginGoogle");
-    }
   }
 };
 </script>
